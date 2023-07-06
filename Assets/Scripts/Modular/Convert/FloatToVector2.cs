@@ -12,7 +12,7 @@ namespace Modular.Convert
 
         public override Vector2 LoadLinkedVector2(string valueName)
         {
-            if (valueName.Equals("Vector2"))
+            if (valueName.Equals(LinkedVector2Names[0]))
                 return new Vector2(x.FloatValue, y.FloatValue);
             return base.LoadLinkedVector2(valueName);
         }

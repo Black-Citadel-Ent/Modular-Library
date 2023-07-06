@@ -13,7 +13,7 @@ namespace Modular.Triggers
 
         public override bool LoadLinkedBool(string valueName)
         {
-            if (valueName.Equals("Trigger"))
+            if (valueName.Equals(LinkedBoolNames[0]))
                 return _trigger;
             return base.LoadLinkedBool(valueName);
         }

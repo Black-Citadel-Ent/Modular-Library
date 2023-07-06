@@ -15,17 +15,12 @@ namespace Modular.Motion2D
             _body = target.GetComponent<Rigidbody2D>();
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             if (_body)
-            {
                 _body.velocity = value.Vector2Value;
-            }
             else
-            {
-                var val = value.Vector2Value;
-                target.transform.localPosition += new Vector3(val.x, val.y, 0) * Time.fixedDeltaTime;
-            }
+                target.transform.localPosition += new Vector3(value.Vector2Value.x, value.Vector2Value.y, 0) * Time.deltaTime;
         }
     }
 }

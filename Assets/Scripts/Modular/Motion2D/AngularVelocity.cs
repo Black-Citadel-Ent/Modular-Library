@@ -5,7 +5,7 @@ namespace Modular.Motion2D
     [AddComponentMenu("Modular/2D Motion/Angular Velocity")]
     public class AngularVelocity : Attachment
     {
-        [SerializeField] private Transform target;
+        [SerializeField] private GameObject target;
         [SerializeField] private FloatLink velocity;
         private Rigidbody2D _body;
 
@@ -18,15 +18,11 @@ namespace Modular.Motion2D
         {
             if (!_body)
             {
-                var current = target.localRotation.eulerAngles;
+                var current = target.transform.localRotation.eulerAngles;
                 var newZ = current.z + velocity.FloatValue * Time.deltaTime;
-                target.localRotation = Quaternion.Euler(current.x, current.y, newZ);
+                target.transform.localRotation = Quaternion.Euler(current.x, current.y, newZ);
             }
-        }
-
-        private void FixedUpdate()
-        {
-            if (_body)
+            else
                 _body.angularVelocity = velocity.FloatValue;
         }
     }

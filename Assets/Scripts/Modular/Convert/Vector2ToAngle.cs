@@ -11,7 +11,7 @@ namespace Modular.Convert
 
         public override float LoadLinkedFloat(string valueName)
         {
-            if (valueName.Equals("Angle"))
+            if (valueName.Equals(LinkedFloatNames[0]))
                 return Translate(vector.Vector2Value);
             return base.LoadLinkedFloat(valueName);
         }

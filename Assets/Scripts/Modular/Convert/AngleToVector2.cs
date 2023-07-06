@@ -11,7 +11,7 @@ namespace Modular.Convert
 
         public override Vector2 LoadLinkedVector2(string valueName)
         {
-            if (valueName.Equals("Result"))
+            if (valueName.Equals(LinkedVector2Names[0]))
                 return Calculate(angle.FloatValue);
             return base.LoadLinkedVector2(valueName);
         }

@@ -14,11 +14,11 @@ namespace Modular.Convert
         
         public override float LoadLinkedFloat(string valueName)
         {
-            if (valueName.Equals("x"))
+            if (valueName.Equals(LinkedFloatNames[0]))
                 return input.Vector3Value.x;
-            if (valueName.Equals("y"))
+            if (valueName.Equals(LinkedFloatNames[1]))
                 return input.Vector3Value.y;
-            if (valueName.Equals("z"))
+            if (valueName.Equals(LinkedFloatNames[2]))
                 return input.Vector3Value.z;
             return base.LoadLinkedFloat(valueName);
         }

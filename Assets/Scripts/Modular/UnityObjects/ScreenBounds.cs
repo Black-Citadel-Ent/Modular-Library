@@ -10,17 +10,17 @@ namespace Modular.UnityObjects
 
         public override float LoadLinkedFloat(string valueName)
         {
-            if (valueName.Equals("Min X"))
+            if (valueName.Equals(LinkedFloatNames[0]))
                 return _camera.transform.position.x - _camera.orthographicSize * Screen.width / Screen.height;
-            if (valueName.Equals("Max X"))
+            if (valueName.Equals(LinkedFloatNames[2]))
                 return _camera.transform.position.x + _camera.orthographicSize * Screen.width / Screen.height;
-            if (valueName.Equals("Min Y"))
+            if (valueName.Equals(LinkedFloatNames[1]))
                 return _camera.transform.position.y - _camera.orthographicSize;
-            if (valueName.Equals("Max Y"))
+            if (valueName.Equals(LinkedFloatNames[3]))
                 return _camera.transform.position.y + _camera.orthographicSize;
-            if (valueName.Equals("Width"))
+            if (valueName.Equals(LinkedFloatNames[4]))
                 return _camera.orthographicSize * 2 * Screen.width / Screen.height;
-            if (valueName.Equals("Height"))
+            if (valueName.Equals(LinkedFloatNames[5]))
                 return _camera.orthographicSize * 2;
             return base.LoadLinkedFloat(valueName);
         }

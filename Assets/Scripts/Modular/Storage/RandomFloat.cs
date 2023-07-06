@@ -1,19 +1,20 @@
 using UnityEngine;
 
-namespace Modular.Container
+namespace Modular.Storage
 {
-    [AddComponentMenu("Modular/Containers/Random")]
-    public class Random : Attachment
+    [AddComponentMenu("Modular/Storage/Float Random")]
+    public class RandomFloat : Attachment
     {
         [SerializeField] private FloatLink lowValue;
         [SerializeField] private FloatLink highValue;
-        private float _value;
         
         public override string[] LinkedFloatNames => new[] { "Value" };
 
+        private float _value;
+        
         public override float LoadLinkedFloat(string valueName)
         {
-            if (valueName.Equals("Value"))
+            if (valueName.Equals(LinkedFloatNames[0]))
                 return _value;
             return base.LoadLinkedFloat(valueName);
         }

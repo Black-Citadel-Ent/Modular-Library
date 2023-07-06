@@ -12,7 +12,7 @@ namespace Modular.Math
 
         public override Vector2 LoadLinkedVector2(string valueName)
         {
-            if (valueName.Equals("Result"))
+            if (valueName.Equals(LinkedVector2Names[0]))
                 return vector.Vector2Value * multiplier.FloatValue;
             return base.LoadLinkedVector2(valueName);
         }

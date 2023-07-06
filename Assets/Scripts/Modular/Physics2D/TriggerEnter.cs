@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Modular.Physics2D
 {
-    [AddComponentMenu("Modular/Physics 2D/Trigger Enter")]
+    [AddComponentMenu("Modular/2D Physics/Trigger Enter")]
     public class TriggerEnter : Attachment
     {
         [SerializeField] private LayerMask layer;
@@ -14,7 +14,7 @@ namespace Modular.Physics2D
 
         public override bool LoadLinkedBool(string valueName)
         {
-            if (valueName.Equals("Trigger"))
+            if (valueName.Equals(LinkedBoolNames[0]))
                 return _trigger;
             return base.LoadLinkedBool(valueName);
         }

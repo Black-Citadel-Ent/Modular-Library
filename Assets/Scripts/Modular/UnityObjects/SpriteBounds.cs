@@ -11,13 +11,13 @@ namespace Modular.UnityObjects
 
         public override float LoadLinkedFloat(string valueName)
         {
-            if (valueName.Equals("Min X"))
+            if (valueName.Equals(LinkedFloatNames[0]))
                 return sprite.bounds.min.x;
-            if (valueName.Equals("Max X"))
+            if (valueName.Equals(LinkedFloatNames[1]))
                 return sprite.bounds.max.x;
-            if (valueName.Equals("Min Y"))
+            if (valueName.Equals(LinkedFloatNames[2]))
                 return sprite.bounds.min.y;
-            if (valueName.Equals("Max Y"))
+            if (valueName.Equals(LinkedFloatNames[3]))
                 return sprite.bounds.max.y;
             return base.LoadLinkedFloat(valueName);
         }

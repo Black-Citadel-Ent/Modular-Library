@@ -13,7 +13,7 @@ namespace Modular.Convert
 
         public override Vector3 LoadLinkedVector3(string valueName)
         {
-            if (valueName.Equals("Vector3"))
+            if (valueName.Equals(LinkedVector3Names[0]))
                 return new Vector3(x.FloatValue, y.FloatValue, z.FloatValue);
             return base.LoadLinkedVector3(valueName);
         }
